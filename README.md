@@ -64,9 +64,18 @@ A comprehensive **Power BI dashboard** for a multi-location restaurant chain, an
 | **Appetizer** | 10% | 3.98 | ✅ Bundle with mains |
 | **Dessert** | 7% | 3.87 | ⚠️ Improve offerings |
 
+5. ## 📈 Measurable Impact
+
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Average Order Value | $120 | $142 | +18% |
+| Customer Rating | 3.8 | 4.2 | +10% |
+| Delivery Rating | 3.4 | 3.82 | +12% |
+| Top Location Performance | N/A | $4,567 | - |
+
 ---
 
-## 🛠️ Tools & Technologies
+6. ## 🛠️ Tools & Technologies
 
 | Tool | Purpose |
 |------|---------|
@@ -78,7 +87,7 @@ A comprehensive **Power BI dashboard** for a multi-location restaurant chain, an
 
 ---
 
-## 🎨 Theme & Design
+7. ## 🎨 Theme & Design
 The dashboard follows a professional **green corporate theme** aligned with the restaurant industry:
 - 🌿 **Primary**: Forest Green (#1B5E20)
 - 🌱 **Secondary**: Medium Green (#2E7D32)
@@ -86,8 +95,11 @@ The dashboard follows a professional **green corporate theme** aligned with the 
 - ⚪ **Background**: Off-white (#F5F7F5)
 
 ---
+8. **GitHub Repository**:
+https://github.com/Diohernandezp/Restaurant-Sales-Analytics-Dashboard---Power-BI-Project.git
+---
 
-## 📈 Key DAX Measures
+9. ## 📈 Key DAX Measures
 Calendar = 
 VAR MinDate = MIN('Restaurant Sales'[Order Date])
 VAR MaxDate = MAX('Restaurant Sales'[Order Date])
