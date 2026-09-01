@@ -33,3 +33,109 @@ A comprehensive **Power BI dashboard** for a multi-location restaurant chain, an
 | **DAX** | Advanced calculations & measures |
 | **Excel** | Initial data storage |
 | **Git** | Version control |
+
+# 📊 Restaurant Sales & Performance Analytics Dashboard
+
+### 🎯 Business Impact
+- **$25,799+** in analyzed sales
+- **12 locations** across US
+- **4.2/5** average customer rating
+- **3 key order types**: Dine-In, Delivery, Takeaway
+
+---
+
+## 📊 Dashboard Features
+
+### 1. Executive Dashboard
+- Real-time KPI cards (Total Revenue, Orders, Rating, Items)
+- Performance by Location
+- Sales by Menu Category
+- Sales by Order Type
+- Sales Trend (YTD)
+- Correlation between Ratings and Sales
+
+### 2. Sales Analysis
+- Sales Breakdown
+- **Heat Map**: Day/Hour performance
+- Location-based performance
+- Product portfolio analysis
+
+### 3. Customer Analytics
+- Rating distribution analysis
+- NPS score calculation
+- Correlation between ratings and sales
+- Delivery vs. Dine-In comparison
+
+### 4. Performance Product
+- Pareto analysis (80/20 rule)
+- Summary Products Table
+- Menu optimization recommendations
+
+---
+
+## 🎨 Theme & Design
+The dashboard follows a professional **green corporate theme** aligned with the restaurant industry:
+- 🌿 **Primary**: Forest Green (#1B5E20)
+- 🌱 **Secondary**: Medium Green (#2E7D32)
+- 🍃 **Accent**: Light Green (#66BB6A)
+- ⚪ **Background**: Off-white (#F5F7F5)
+
+---
+
+## 📈 Key DAX Measures
+Calendar = 
+VAR MinDate = MIN('Restaurant Sales'[Order Date])
+VAR MaxDate = MAX('Restaurant Sales'[Order Date])
+RETURN
+ADDCOLUMNS(
+    CALENDAR(MinDate, MaxDate),
+    "YEAR", YEAR([Date]),
+    "MONTH", FORMAT([Date],"MMM"),
+    "NUMBERMONTH", MONTH([Date]),
+    "QUARTER","Q" & QUARTER([Date]),
+    "WEEKDAY", FORMAT([Date],"ddd"),
+    "DAYNUMBER", WEEKDAY([Date]),
+    "WEEKYEAR", WEEKNUM([Date])
+)
+
+Locations = 
+DISTINCT('Restaurant Sales'[Restaurant Location])
+
+Average Price Order = 
+AVERAGEX('Restaurant Sales',[Order Total])
+
+Average Ratings = 
+AVERAGE('Restaurant Sales'[Customer Rating])
+
+Avg Price Item = 
+DIVIDE([Total Sales],[Total Items])
+
+Best Category Rating = 
+    MAXX(
+        VALUES('Restaurant Sales'[Category]),
+    [Average Ratings]
+    )
+
+Category Participation = 
+    DIVIDE(
+        [Total Sales],
+        CALCULATE([Total Sales],
+        ALLSELECTED('Restaurant Sales'[Category]))
+    )
+
+Total Sales = 
+SUM('Restaurant Sales'[Order Total])
+
+Total Orders = 
+COUNTROWS('Restaurant Sales')
+
+Sales YTD = 
+TOTALYTD([Total Sales], 'Calendar'[Date])
+
+Sales MM AA = 
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR('Calendar'[Date])
+)
+
+
