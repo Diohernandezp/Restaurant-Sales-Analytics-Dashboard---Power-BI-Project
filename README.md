@@ -55,13 +55,14 @@ A comprehensive **Power BI dashboard** for a multi-location restaurant chain, an
    - Lowest activity: **Sunday mornings**
    - **$142** average order value
   
-4. **Product Portfolio Optimization**
-| Category | Sales % | Avg Rating |	Recommendation        |
-|----------|---------|------------|---------------------- |
-| Main	  |   65%	|  3.89      |	✅ Maintain & promote |
-| Beverage |	18%   |	4.07      |	✅ Expand selection   |
-| Appetizer|	10%	|  3.98	    | ✅ Bundle with mains  |
-| Dessert  |	7%	   |  3.87      |	⚠️ Improve offerings  |
+4. ## 📋 Product Portfolio Optimization
+
+| Category | Sales % | Avg Rating | Recommendation |
+| :--- | :---: | :---: | :--- |
+| **Main** | 65% | 3.89 | ✅ Maintain & promote |
+| **Beverage** | 18% | 4.07 | ✅ Expand selection |
+| **Appetizer** | 10% | 3.98 | ✅ Bundle with mains |
+| **Dessert** | 7% | 3.87 | ⚠️ Improve offerings |
 
 ---
 
